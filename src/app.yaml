@@ -14,5 +14,11 @@ handlers:
 - url: /js
   static_dir: js
 
+- url: /list
+  script: list.py
+
+- url: /browse
+  script: browse.py
+
 - url: .*
   script: main.py

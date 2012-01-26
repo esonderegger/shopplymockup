@@ -30,3 +30,7 @@ header {
   text-align: right;
   float: left;
 }
+#dealsContent {
+  margin: 0px auto;
+  width: 1000px;
+}
