@@ -3,3 +3,5 @@ homedepot.com;/img/homeDepot.png;DEWALT DCD710S2 3/8 in. 12 Volt Cordless Drill/
 Adorama.com;/img/adorama.png;Nikon D7000 Digital SLR Camera Body, 16.2 Megapixel, 1080HD Movie;The D7000 is a new mid-class DX-format camera with a compact body loaded with a number of advanced functions.;/img/nikon.jpg;8.45
 newegg.com;/img/newegg.png;Western Digital Caviar Green WD10EADS 1TB 32MB Cache SATA 3.0Gb/s 3.5" Internal Hard Drive;Bare Drive;/img/hardDrive.jpg;4.85
 lowes.com;/img/lowes.png;Delta Traditional Brushed Nickel 2-Handle WaterSense Bathroom Sink Faucet;Durable Brushed Nickel finished guaranteed not to tarnish;/img/faucet.jpg;5.15
+Amazon.com;/img/amazon.png;Crane Drop Shape Cool Mist Humidifier;Provides Moisture for Dry Cough, Sinus Irritation, Dry Skin;/img/humidifier.jpg;2.95
+newegg.com;/img/newegg.png;GIGABYTE GV-N440D3-1GI GeForce GT 440 (Fermi) Video Card;1GB 128-bit DDR3 PCI Express 2.0 x16 HDCP Ready;/img/videoCard.jpg;7.05
