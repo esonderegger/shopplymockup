@@ -158,16 +158,16 @@ function checkKey(e) {
 
 document.onkeydown = checkKey;
 
-// Here is some code for swipe gestures from 
+// Here is some code for swipe gestures from scottgale.com
 document.ontouchend = function() {
    //swipe left
    if( self.swipeLeft && self.swipe ) {
       self.moveTo(self.current-1);
-      moveLeft();               
+      moveRight();               
    //swipe right
    } else if(self.swipe) {
       self.moveTo(self.current+1);
-      moveRight();
+      moveLeft();
    }            
 }
 document.ontouchmove = function(e){

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+# this provides the database funtionality for the mockup
+# the long if statements are because appengine doesn't provide full-text search and I had invested too much in
+# this appengine project to try a different approach.
 
 from google.appengine.ext import db
-#from google.appengine.ext import search
 
 class shopplyDeal(db.Model):
 	vendor = db.StringProperty()
@@ -26,6 +28,8 @@ def getAllDeals(srch):
     getAllDeals("")
 
 def getAllMyDeals(srch):
+# filters the query to only return the deals that are saved by the user
+# note that for this mockup I only allow for one user
   dealsQuery = db.GqlQuery("SELECT * FROM shopplyDeal WHERE isMyDeal = True")
   deals = dealsQuery.fetch(50)
   outputDeals = []

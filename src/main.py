@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# this is the main page for the mockup. I put the header block in its own function in case I was going to make
+# multiple pages, which I ended up not doing.
 
 def mainHeader():
   print '<header>'
