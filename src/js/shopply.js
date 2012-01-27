@@ -145,3 +145,43 @@ function disableEnterKey(e) //don't remember where I found this function, but I 
 
      return (key != 13);
 }
+
+function checkKey(e) {
+    e = e || window.event;
+    //alert(e.keyCode);
+    if (e.keyCode == 37){
+      moveLeft();
+    } else if (e.keyCode == 39) {
+      moveRight();
+    }
+}
+
+document.onkeydown = checkKey;
+
+// Here is some code for swipe gestures from 
+document.ontouchend = function() {
+   //swipe left
+   if( self.swipeLeft && self.swipe ) {
+      self.moveTo(self.current-1);
+      moveLeft();               
+   //swipe right
+   } else if(self.swipe) {
+      self.moveTo(self.current+1);
+      moveRight();
+   }            
+}
+document.ontouchmove = function(e){
+   //move only if you swipe across
+   if( Math.abs(e.touches[0].pageX - self.startX) > 150 ) {
+      if( (e.touches[0].pageX - self.startX) > 5 ) {
+         self.swipeLeft = true
+      } else {
+         self.swipeLeft = false;
+      }
+      self.swipe = true;
+   }
+}
+document.ontouchstart = function(e) {
+   self.startX = e.touches[0].pageX;
+   self.swipe = false;
+}
