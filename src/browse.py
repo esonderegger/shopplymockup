@@ -5,7 +5,7 @@ import shopplyDeals
 print 'Content-Type: text/html \n'
 print '<div id="container">'
 
-allDeals = shopplyDeals.getAllDeals()
+allDeals = shopplyDeals.getAllDeals("")
 objectCount = 0
 
 for deal in allDeals:

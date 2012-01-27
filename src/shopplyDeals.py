@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 from google.appengine.ext import db
+from google.appengine.ext import search
 
-class shopplyDeal(db.Model):
+class shopplyDeal(search.SearchableModel):
 	vendor = db.StringProperty()
 	vendorGraphic = db.StringProperty()
 	itemName = db.StringProperty()
@@ -11,14 +12,19 @@ class shopplyDeal(db.Model):
 	averageSavings = db.FloatProperty()
 	isMyDeal = db.BooleanProperty()
 
-def getAllDeals():
-	dealsQuery = db.GqlQuery("SELECT * FROM shopplyDeal")
+def getAllDeals(srch):
+	dealsQuery = shopplyDeal.all().search(srch)
 	deals = dealsQuery.fetch(50)
 	if len(deals) > 0:
 	  return deals
 	else:
 	  getDealsFromFile()
-	  getAllDeals()
+	  getAllDeals("")
+
+def getAllMyDeals(srch):
+  dealsQuery = db.GqlQuery("SELECT * FROM shopplyDeal WHERE isMyDeal = True")
+  deals = dealsQuery.fetch(50)
+  return deals
 
 def getDealsFromFile():
   sampleFile = open('sampleDeals.txt', 'r')

@@ -83,6 +83,10 @@ function addToDeals() {
   document.getElementById("myDealsLink").innerHTML = myDealsText;
 }
 function showMyDeals() {
-  var listData = synchronousGetFile("/list?mydeals=yes");
+  var listData = synchronousGetFile("/list?myDeals=yes");
+  document.getElementById("dealsContent").innerHTML = listData;
+}
+function searchDeals(search) {
+  var listData = synchronousGetFile("/list?search=" + search);
   document.getElementById("dealsContent").innerHTML = listData;
 }
