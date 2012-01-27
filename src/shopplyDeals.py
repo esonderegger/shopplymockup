@@ -33,3 +33,8 @@ def getDealsFromFile():
     newDeal.averageSavings = float(lineList[5])
     newDeal.isMyDeal = False
     newDeal.put()
+
+def countMyDeals():
+  myDealsQuery = db.GqlQuery("SELECT * FROM shopplyDeal WHERE isMyDeal = True")
+  myDealsCount = myDealsQuery.count()
+  return myDealsCount

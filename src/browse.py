@@ -2,6 +2,7 @@
 
 import shopplyDeals
 
+print 'Content-Type: text/html \n'
 print '<div id="container">'
 
 allDeals = shopplyDeals.getAllDeals()

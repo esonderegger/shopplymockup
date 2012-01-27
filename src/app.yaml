@@ -4,6 +4,9 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
 
 - url: /css
   static_dir: css
@@ -19,6 +22,9 @@ handlers:
 
 - url: /browse
   script: browse.py
+
+- url: /myDealsCount
+  script: myDealsCount.py
 
 - url: .*
   script: main.py

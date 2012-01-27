@@ -16,6 +16,8 @@ function initMainPage() {
   var browseData = synchronousGetFile("/browse");
   document.getElementById("dealsContent").innerHTML = browseData;
   moveCenter(3);
+  var myDealsText = synchronousGetFile("/myDealsCount");
+  document.getElementById("myDealsLink").innerHTML = myDealsText;
 }
 function moveCenter(num){
   var llBlock = getBlockByNum(num - 2);
@@ -75,4 +77,12 @@ function moveRight(){
 }
 function addToDeals() {
   var centerNum = getCenterNum();
+  var centerBlock = getBlockByNum(centerNum);
+  var centerTitle = centerBlock.title;
+  var myDealsText = synchronousGetFile("/myDealsCount?addkey=" + centerTitle);
+  document.getElementById("myDealsLink").innerHTML = myDealsText;
+}
+function showMyDeals() {
+  var listData = synchronousGetFile("/list?mydeals=yes");
+  document.getElementById("dealsContent").innerHTML = listData;
 }

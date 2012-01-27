@@ -76,21 +76,21 @@ header {
   display: inline-block;
 }
 .vendorLogo {
-  margin: 20px;
+  padding: 20px;
 }
 .itemGraphic {
-  margin-right: 10px;
+  padding-right: 10px;
   float: right;
 }
 .itemName {
-  margin: 20px;
+  padding: 20px;
   font-size: 18px;
 }
 .itemDescription {
-  margin: 20px;
+  padding: 20px;
 }
 .averageSavings {
-  margin: 20px;
+  padding: 20px;
   width: 360px;
   clear: both;
   text-align: center;
