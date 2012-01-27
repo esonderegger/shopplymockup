@@ -97,3 +97,6 @@ table {
 td {
   padding: 10px;
 }
+form {
+  display: inline-block;
+}

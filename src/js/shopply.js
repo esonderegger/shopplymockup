@@ -83,11 +83,9 @@ function addToDeals() {
   document.getElementById("myDealsLink").innerHTML = myDealsText;
 }
 function showMyDeals() {
+  document.searchLink.searchstring.value = "Search...";
+  document.getElementById("homeLink").title = "myDeals";
   var listData = synchronousGetFile("/list?myDeals=yes");
-  document.getElementById("dealsContent").innerHTML = listData;
-}
-function searchDeals(search) {
-  var listData = synchronousGetFile("/list?search=" + search);
   document.getElementById("dealsContent").innerHTML = listData;
 }
 function addDealFromList(key) {
@@ -98,4 +96,40 @@ function removeDealFromList(key) {
   var myDealsText = synchronousGetFile("/myDealsCount?removekey=" + key);
   document.getElementById("myDealsLink").innerHTML = myDealsText;
   showMyDeals();
+}
+function shopplySearch() {
+  if (document.getElementById("homeLink").title == "myDeals"){
+    var myDealString = "&myDeals=yes"
+  } else {
+    var myDealString = "&myDeals=no"
+  }
+	var search = document.searchLink.searchstring.value;
+	if (search.length==0) { 
+	  if (document.getElementById("homeLink").title == "allDeals"){
+		  initMainPage();
+		}
+		return;
+	} 
+	if (window.XMLHttpRequest) {
+		Xmlhttp=new XMLHttpRequest();
+	} else {
+		Xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	Xmlhttp.onreadystatechange=function() {
+		if (Xmlhttp.readyState==4 && Xmlhttp.status==200) {
+			document.getElementById("dealsContent").innerHTML=Xmlhttp.responseText;
+		}
+	}
+	Xmlhttp.open("GET","/list?search=" + search + myDealString,true);
+	Xmlhttp.send();
+}
+function disableEnterKey(e) //don't remember where I found this function, but I always copy/paste it from other projects
+{
+     var key;      
+     if(window.event)
+          key = window.event.keyCode; //IE
+     else
+          key = e.which; //firefox      
+
+     return (key != 13);
 }

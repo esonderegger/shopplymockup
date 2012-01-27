@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 from google.appengine.ext import db
-from google.appengine.ext import search
+#from google.appengine.ext import search
 
-class shopplyDeal(search.SearchableModel):
+class shopplyDeal(db.Model):
 	vendor = db.StringProperty()
 	vendorGraphic = db.StringProperty()
 	itemName = db.StringProperty()
@@ -13,18 +13,26 @@ class shopplyDeal(search.SearchableModel):
 	isMyDeal = db.BooleanProperty()
 
 def getAllDeals(srch):
-	dealsQuery = shopplyDeal.all().search(srch)
-	deals = dealsQuery.fetch(50)
-	if len(deals) > 0:
-	  return deals
-	else:
-	  getDealsFromFile()
-	  getAllDeals("")
+  outputDeals = []
+  dealsQuery = shopplyDeal.all()
+  deals = dealsQuery.fetch(50)
+  if len(deals) > 0:
+    for deal in deals:
+      if (str(deal.vendor).lower().find(srch.lower()) >= 0) or (str(deal.itemName).lower().find(srch.lower()) >= 0) or (str(deal.itemDescription).lower().find(srch.lower()) >= 0):
+        outputDeals.append(deal)
+    return outputDeals
+  else:
+    getDealsFromFile()
+    getAllDeals("")
 
 def getAllMyDeals(srch):
   dealsQuery = db.GqlQuery("SELECT * FROM shopplyDeal WHERE isMyDeal = True")
   deals = dealsQuery.fetch(50)
-  return deals
+  outputDeals = []
+  for deal in deals:
+    if (str(deal.vendor).lower().find(srch.lower()) >= 0) or (str(deal.itemName).lower().find(srch.lower()) >= 0) or (str(deal.itemDescription).lower().find(srch.lower()) >= 0):
+      outputDeals.append(deal)
+  return outputDeals
 
 def getDealsFromFile():
   sampleFile = open('sampleDeals.txt', 'r')

@@ -32,8 +32,7 @@ if showMyDeals == 'yes':
 else:
   myDeals = shopplyDeals.getAllDeals(searchString)
   if myDeals:
-    for deal in myDeals:
-      dealsToTable(myDeals)
+    dealsToTable(myDeals)
   else:
     print "<h1>Your search generated no results.</h1>"
 
