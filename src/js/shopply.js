@@ -20,12 +20,12 @@ function initMainPage() {
 function moveCenter(num){
   var llBlock = getBlockByNum(num - 2);
   llBlock.style.webkitTransform = "rotateY(80deg) scale(0.6)";
-  llBlock.style.left = "0px";
+  llBlock.style.left = "-50px";
   llBlock.style.opacity = 0.3;
   llBlock.style.zIndex = 1;
   var lBlock = getBlockByNum(num - 1);
   lBlock.style.webkitTransform = "rotateY(40deg) scale(0.8)";
-  lBlock.style.left = "150px";
+  lBlock.style.left = "120px";
   lBlock.style.opacity = 0.9;
   lBlock.style.zIndex = 2;
   var centerBlock = getBlockByNum(num);
@@ -35,7 +35,7 @@ function moveCenter(num){
   centerBlock.style.zIndex = 3;
   var rBlock = getBlockByNum(num + 1);
   rBlock.style.webkitTransform = "rotateY(-40deg) scale(0.8)";
-  rBlock.style.left = "475px";
+  rBlock.style.left = "480px";
   rBlock.style.opacity = 0.9;
   rBlock.style.zIndex = 2;
   var rrBlock = getBlockByNum(num + 2);

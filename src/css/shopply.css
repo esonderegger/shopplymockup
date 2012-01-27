@@ -43,14 +43,21 @@ header {
   -webkit-perspective-origin: 50% 30%;
   overflow: hidden;
 }
-.coverflow{
+.coverflow {
   width: 400px;
   height: 400px;
   display: inline-block;
   position: absolute;
   background-color: #fff;
   opacity: 0;
-  -webkit-transition-property: perspective;
+  /*-webkit-transition-property: perspective;*/
   -webkit-transition-duration: 0.5s;
   -webkit-box-reflect: below 10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.2)));
+}
+#browseLinks {
+  width: 1000px;
+  height: 200px;
+  text-align: center;
+  position:relative;
+  top:-200px;
 }

@@ -15,3 +15,9 @@ for line in sampleFile:
   objectCount += 1
 
 print '</div>'
+
+print '<div id="browseLinks">'
+print '<a href="javascript:void(0)" onclick="moveLeft();">Move Left</a>'
+print '<a href="javascript:void(0)" onclick="moveLeft();">Add to Deals</a>'
+print '<a href="javascript:void(0)" onclick="moveLeft();">Move Right</a>'
+print '</div>'
