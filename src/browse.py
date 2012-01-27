@@ -3,7 +3,7 @@
 print '<div id="container">'
 
 sampleFile = open('sampleDeals.txt', 'r')
-objectCount = 0
+objectCount = 1
 
 for line in sampleFile:
   lineList = line.split(';')

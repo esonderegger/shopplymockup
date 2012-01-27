@@ -19,7 +19,7 @@ function initMainPage() {
 }
 function moveCenter(num){
   var llBlock = getBlockByNum(num - 2);
-  llBlock.style.webkitTransform = "rotateY(80deg) scale(0.5)";
+  llBlock.style.webkitTransform = "rotateY(80deg) scale(0.6)";
   llBlock.style.left = "0px";
   llBlock.style.opacity = 0.3;
   llBlock.style.zIndex = 1;
@@ -39,18 +39,20 @@ function moveCenter(num){
   rBlock.style.opacity = 0.9;
   rBlock.style.zIndex = 2;
   var rrBlock = getBlockByNum(num + 2);
-  rrBlock.style.webkitTransform = "rotateY(-80deg) scale(0.5)";
+  rrBlock.style.webkitTransform = "rotateY(-80deg) scale(0.6)";
   rrBlock.style.left = "650px";
   rrBlock.style.opacity = 0.3;
   rrBlock.style.zIndex = 1;
 }
 function getBlockByNum(num){
- if (num >= 0) {
+  var flowcount = document.getElementsByClassName("coverflow").length;
+ if (num > 0 && num <= flowcount) {
     return document.getElementById("object" + num);
- } else {
-    var flowcount = document.getElementsByClassName("coverflow").length;
+ } else if (num <= flowcount){
     var newNum = num + flowcount;
-    document.getElementById("label").innerHTML = newNum;
+    return document.getElementById("object" + newNum);
+ } else {
+    var newNum = num - flowcount;
     return document.getElementById("object" + newNum);
  }
 }
