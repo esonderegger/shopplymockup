@@ -1,7 +1,7 @@
 body {
   background-color: #000;
-  color: #aaa;
-  font-family: sans-serif;
+  color: #3c5b95;
+  font-family: 'Nunito', sans-serif;
   margin: 0px;
 }
 header {
@@ -74,4 +74,24 @@ header {
   top:-20px;
   background-image: url(/img/addToDealsBG.png);
   display: inline-block;
+}
+.vendorLogo {
+  margin: 20px;
+}
+.itemGraphic {
+  margin-right: 10px;
+  float: right;
+}
+.itemName {
+  margin: 20px;
+  font-size: 18px;
+}
+.itemDescription {
+  margin: 20px;
+}
+.averageSavings {
+  margin: 20px;
+  width: 360px;
+  clear: both;
+  text-align: center;
 }

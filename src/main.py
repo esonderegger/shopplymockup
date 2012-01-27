@@ -26,6 +26,7 @@ print '<meta charset="utf-8" />'
 print '<title>Shopply</title>'
 print '<link href="/css/shopply.css" rel="stylesheet" />'
 print '<script src="/js/shopply.js"></script>'
+print "<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>"
 print '</head>'
 print '<body onload=initMainPage()>'
 mainHeader()

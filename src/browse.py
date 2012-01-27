@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 
+import shopplyDeals
+
 print '<div id="container">'
 
-sampleFile = open('sampleDeals.txt', 'r')
+allDeals = shopplyDeals.getAllDeals()
 objectCount = 0
 
-for line in sampleFile:
-  lineList = line.split(';')
-  print '<div class="coverflow" id="object' + str(objectCount) + '" onclick="moveCenter(' + str(objectCount) + ');">'
-  print '<div>' + lineList[0] + '</div>'
-  print '<div>' + lineList[1] + '</div>'
-  print '<div>' + lineList[2] + '</div>'
+for deal in allDeals:
+  print '<div class="coverflow" id="object' + str(objectCount) + '" title="' + str(deal.key()) + '" onclick="moveCenter(' + str(objectCount) + ');">'
+  print '<div class="vendorLogo"><img src="' + deal.vendorGraphic.encode('utf-8') + '" alt="' + deal.vendor.encode('utf-8') + '" /></div>'
+  print '<div class="itemGraphic"><img src="' + deal.itemGraphic.encode('utf-8') + '" alt="' + deal.itemName.encode('utf-8') + '" /></div>'
+  print '<div class="itemName">' + deal.itemName.encode('utf-8') + '</div>'
+  print '<div class="itemDescription">' + deal.itemDescription.encode('utf-8') + '</div>'
+  print '<div class="averageSavings">Average saving: $' + str(deal.averageSavings) + '</div>'
   print '</div>'
   objectCount += 1
 
