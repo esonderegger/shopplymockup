@@ -1,0 +1,7 @@
+Amazon.com;Shiny New Toaster;3.25
+HomeDepot.com;Cordless Drill;4.75
+Adorama.com;Nikon D3 Camera;9.50
+NewEgg.com;1TB Internal Hard Drive;3.75
+Lowes.com;Whirlpool Refrigerator;25.00
+barnesandnoble.com;Nook Color;1.25
+Zappos.com;Ugg Boots;10.65

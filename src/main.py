@@ -9,7 +9,12 @@ def mainHeader():
   print 'Home | My Deals | Search'
   print '</div>'
   print '<div id="welcomeUser">'
+  print '<div id="userPic">'
+  print '<img src="/img/welcomeDave.png" alt="Welcome Dave" />'
+  print '</div>'
+  print '<div id="welcomeName">'
   print 'Welcome Dave'
+  print '</div>'
   print '</div>'
   print '</header>'
 
