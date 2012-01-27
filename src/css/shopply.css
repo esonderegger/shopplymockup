@@ -107,3 +107,15 @@ form {
 .evenTableRow {
   background-color: #444;
 }
+#searchBox {
+  border: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  color: #888;
+}
+#searchContainer {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}

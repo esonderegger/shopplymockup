@@ -20,6 +20,14 @@ function initMainPage() {
   document.getElementById("myDealsLink").innerHTML = myDealsText;
 }
 function moveCenter(num){
+  var flowcount = document.getElementsByClassName("coverflow").length;
+  for (var i=0; i < flowcount; i++) {
+    //if (num != i) && (num - 1 != i) && (num + flowcount -1 != i) && (num - 2 != i) && (num + flowcount - 2 != i) && (num + 1 != i) && (num - flowcount +1 != i) && (num + 2 != i) && (num - flowcount + 2 != i) {
+      var invisibleBlock = getBlockByNum(i);
+      invisibleBlock.style.opacity = 0;
+      invisibleBlock.style.left = "-500px";
+    //}
+  }
   var llBlock = getBlockByNum(num - 2);
   llBlock.style.webkitTransform = "rotateY(80deg) scale(0.6)";
   llBlock.style.left = "-50px";
