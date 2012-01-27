@@ -34,8 +34,8 @@ function moveCenter(num){
   llBlock.style.opacity = 0.3;
   llBlock.style.zIndex = 1;
   var lBlock = getBlockByNum(num - 1);
-  lBlock.style.webkitTransform = "rotateY(40deg) scale(0.8)";
-  lBlock.style.left = "120px";
+  lBlock.style.webkitTransform = "rotateY(75deg) scale(0.8)";
+  lBlock.style.left = "60px";
   lBlock.style.opacity = 0.9;
   lBlock.style.zIndex = 2;
   var centerBlock = getBlockByNum(num);
@@ -44,8 +44,8 @@ function moveCenter(num){
   centerBlock.style.opacity = 1;
   centerBlock.style.zIndex = 3;
   var rBlock = getBlockByNum(num + 1);
-  rBlock.style.webkitTransform = "rotateY(-40deg) scale(0.8)";
-  rBlock.style.left = "480px";
+  rBlock.style.webkitTransform = "rotateY(-75deg) scale(0.8)";
+  rBlock.style.left = "540px";
   rBlock.style.opacity = 0.9;
   rBlock.style.zIndex = 2;
   var rrBlock = getBlockByNum(num + 2);
@@ -91,7 +91,7 @@ function addToDeals() {
   document.getElementById("myDealsLink").innerHTML = myDealsText;
 }
 function showMyDeals() {
-  document.searchLink.searchstring.value = "Search...";
+  document.getElementById("searchForm").searchstring.value = "Search...";
   document.getElementById("homeLink").title = "myDeals";
   var listData = synchronousGetFile("/list?myDeals=yes");
   document.getElementById("dealsContent").innerHTML = listData;
@@ -112,7 +112,7 @@ function shopplySearch() {
   } else {
     var myDealString = "myDeals=no&"
   }
-  var search = document.searchLink.searchstring.value;
+  var search = document.getElementById("searchForm").searchstring.value;
 	if (search.length==0) { 
 	  if (document.getElementById("homeLink").title == "allDeals"){
 		  initMainPage();

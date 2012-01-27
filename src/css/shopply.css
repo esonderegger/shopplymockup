@@ -112,10 +112,17 @@ form {
   outline: none;
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
+  padding: 0px;
+  vertical-align: top;
+  width: 200px;
   color: #888;
 }
-#searchContainer {
+#searchForm {
   background-color: #fff;
+  width: 210px;
+  height: 30px;
   padding: 5px;
+  vertical-align: middle;
   border-radius: 10px;
+  -webkit-border-radius: 10px;
 }

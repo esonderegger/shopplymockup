@@ -2,6 +2,7 @@
 
 import shopplyDeals
 import cgi
+import time
 
 form = cgi.FieldStorage()
 addKey = form.getfirst("addkey", "none")
@@ -17,6 +18,7 @@ if removeKey != 'none':
   theDeal.isMyDeal = False
   theDeal.put()
 
+time.sleep(0.3)
 dealsCount = shopplyDeals.countMyDeals()
 
 print 'Content-Type: text/html \n'
