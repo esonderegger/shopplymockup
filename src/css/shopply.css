@@ -34,3 +34,21 @@ header {
   margin: 0px auto;
   width: 1000px;
 }
+#container {
+  width: 800px;
+  height: 400px;
+  padding: 50px 100px 250px 100px;
+  position: relative;
+  -webkit-perspective: 1000px;
+  overflow: hidden;
+}
+.coverflow{
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  -webkit-transition-property: perspective;
+  -webkit-transition-duration: 0.5s;
+}
