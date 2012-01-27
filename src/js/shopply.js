@@ -90,3 +90,12 @@ function searchDeals(search) {
   var listData = synchronousGetFile("/list?search=" + search);
   document.getElementById("dealsContent").innerHTML = listData;
 }
+function addDealFromList(key) {
+  var myDealsText = synchronousGetFile("/myDealsCount?addkey=" + key);
+  document.getElementById("myDealsLink").innerHTML = myDealsText;
+}
+function removeDealFromList(key) {
+  var myDealsText = synchronousGetFile("/myDealsCount?removekey=" + key);
+  document.getElementById("myDealsLink").innerHTML = myDealsText;
+  showMyDeals();
+}

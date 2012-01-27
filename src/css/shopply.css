@@ -9,6 +9,13 @@ header {
   width: 1000px;
   height: 120px;
 }
+a {
+  color: #3c5b95;
+}
+a:hover {
+  text-decoration: none;
+  color: #5279c1;
+}
 #logo {
   height: 100px;
   padding-top: 20px;
@@ -21,6 +28,7 @@ header {
   width: 560px;
   text-align: center;
   line-height: 80px;
+  font-size: 18px;
   float: left;
 }
 #welcomeUser {
@@ -60,19 +68,7 @@ header {
   top:-200px;
 }
 .arrowLink {
-  width: 50px;
-  height: 50px;
   margin: 0px 20px;
-  display: inline-block;
-}
-#addToDeals {
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  margin: 0px 20px;
-  position:relative;
-  top:-20px;
-  background-image: url(/img/addToDealsBG.png);
   display: inline-block;
 }
 .vendorLogo {
@@ -94,4 +90,10 @@ header {
   width: 360px;
   clear: both;
   text-align: center;
+}
+table {
+  margin-top: 50px;
+}
+td {
+  padding: 10px;
 }

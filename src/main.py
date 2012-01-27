@@ -8,7 +8,7 @@ def mainHeader():
   print '<div id="headerLinks">'
   print '<span id="homeLink"><a href="/">Home</a> | </span>'
   print '<span id="myDealsLink">My Deals</span>'
-  print '<span id="searchLink"> | <a href="javascript:void(0)" onclick="searchDeals(\'drill\');">Search</a></span>'
+  print '<span id="searchLink"> | <input type="text" name="searchstring" onKeyPress="return disableEnterKey(event)" onkeyup="usmbSearchTool()"></span>'
   print '</div>'
   print '<div id="welcomeUser">'
   print '<div id="userPic">'

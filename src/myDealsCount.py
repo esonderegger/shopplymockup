@@ -4,10 +4,17 @@ import shopplyDeals
 import cgi
 
 form = cgi.FieldStorage()
-dealKey = form.getfirst("addkey", "none")
-if dealKey != 'none':
-  theDeal = shopplyDeals.shopplyDeal.get(dealKey)
+addKey = form.getfirst("addkey", "none")
+removeKey = form.getfirst("removekey", "none")
+
+if addKey != 'none':
+  theDeal = shopplyDeals.shopplyDeal.get(addKey)
   theDeal.isMyDeal = True
+  theDeal.put()
+
+if removeKey != 'none':
+  theDeal = shopplyDeals.shopplyDeal.get(removeKey)
+  theDeal.isMyDeal = False
   theDeal.put()
 
 dealsCount = shopplyDeals.countMyDeals()
