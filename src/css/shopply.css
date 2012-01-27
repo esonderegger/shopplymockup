@@ -93,10 +93,17 @@ a:hover {
 }
 table {
   margin-top: 50px;
+  color: #eee;
 }
 td {
   padding: 10px;
 }
 form {
   display: inline-block;
+}
+.oddTableRow {
+  background-color: #222;
+}
+.evenTableRow {
+  background-color: #444;
 }

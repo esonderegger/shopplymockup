@@ -5,15 +5,18 @@ import cgi
 
 def dealsToTable(deals):
   print '<table>'
-  for deal in deals:
-    print '<tr>'
-    print '<td>' + deal.vendor.encode('utf-8') + '</td>'
-    print '<td>' + deal.itemName.encode('utf-8') + '</td>'
-    print '<td>' + deal.itemDescription.encode('utf-8') + '</td>'
-    if deal.isMyDeal:
-      print '<td><a href="javascript:void(0)" onclick="removeDealFromList(\'' + str(deal.key()) + '\');"><img src="/img/remove.png" alt="Remove Deal" /></a></td>'
+  for i in range(len(deals)):
+    if i % 2 == 1:
+      print '<tr class="oddTableRow">'
     else :
-      print '<td><a href="javascript:void(0)" onclick="addDealFromList(\'' + str(deal.key()) + '\');"><img src="/img/add.png" alt="Add Deal" /></a></td>'
+      print '<tr class="evenTableRow">'
+    print '<td>' + deals[i].vendor.encode('utf-8') + '</td>'
+    print '<td>' + deals[i].itemName.encode('utf-8') + '</td>'
+    print '<td>' + deals[i].itemDescription.encode('utf-8') + '</td>'
+    if deals[i].isMyDeal:
+      print '<td><a href="javascript:void(0)" onclick="removeDealFromList(\'' + str(deals[i].key()) + '\');"><img src="/img/remove.png" alt="Remove Deal" /></a></td>'
+    else :
+      print '<td><a href="javascript:void(0)" onclick="addDealFromList(\'' + str(deals[i].key()) + '\');"><img src="/img/add.png" alt="Add Deal" /></a></td>'
     print '</tr>'
   print '</table>'
 

@@ -91,24 +91,28 @@ function showMyDeals() {
 function addDealFromList(key) {
   var myDealsText = synchronousGetFile("/myDealsCount?addkey=" + key);
   document.getElementById("myDealsLink").innerHTML = myDealsText;
+  shopplySearch();
 }
 function removeDealFromList(key) {
   var myDealsText = synchronousGetFile("/myDealsCount?removekey=" + key);
   document.getElementById("myDealsLink").innerHTML = myDealsText;
-  showMyDeals();
+  shopplySearch();
 }
 function shopplySearch() {
   if (document.getElementById("homeLink").title == "myDeals"){
-    var myDealString = "&myDeals=yes"
+    var myDealString = "myDeals=yes&"
   } else {
-    var myDealString = "&myDeals=no"
+    var myDealString = "myDeals=no&"
   }
-	var search = document.searchLink.searchstring.value;
+  var search = document.searchLink.searchstring.value;
 	if (search.length==0) { 
 	  if (document.getElementById("homeLink").title == "allDeals"){
 		  initMainPage();
 		}
 		return;
+	}
+	if (search == "Search..."){
+	  search = "";
 	} 
 	if (window.XMLHttpRequest) {
 		Xmlhttp=new XMLHttpRequest();
@@ -120,7 +124,7 @@ function shopplySearch() {
 			document.getElementById("dealsContent").innerHTML=Xmlhttp.responseText;
 		}
 	}
-	Xmlhttp.open("GET","/list?search=" + search + myDealString,true);
+	Xmlhttp.open("GET","/list?" + myDealString + "search=" + search,true);
 	Xmlhttp.send();
 }
 function disableEnterKey(e) //don't remember where I found this function, but I always copy/paste it from other projects
