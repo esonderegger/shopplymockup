@@ -46,13 +46,33 @@ function moveCenter(num){
 }
 function getBlockByNum(num){
   var flowcount = document.getElementsByClassName("coverflow").length;
- if (num > 0 && num <= flowcount) {
+ if (num >= 0 && num < flowcount) {
     return document.getElementById("object" + num);
- } else if (num <= flowcount){
+ } else if (num < flowcount){
     var newNum = num + flowcount;
     return document.getElementById("object" + newNum);
  } else {
     var newNum = num - flowcount;
     return document.getElementById("object" + newNum);
  }
+}
+function getCenterNum(){
+  var flowcount = document.getElementsByClassName("coverflow").length;
+  for (var i=0; i < flowcount; i++) {
+    var testObject = getBlockByNum(i);
+    if (testObject.style.opacity == 1){
+      return i;
+    }
+  }
+}
+function moveLeft(){
+  var centerNum = getCenterNum();
+  moveCenter(centerNum + 1);
+}
+function moveRight(){
+  var centerNum = getCenterNum();
+  moveCenter(centerNum - 1);
+}
+function addToDeals() {
+  var centerNum = getCenterNum();
 }

@@ -3,7 +3,7 @@
 print '<div id="container">'
 
 sampleFile = open('sampleDeals.txt', 'r')
-objectCount = 1
+objectCount = 0
 
 for line in sampleFile:
   lineList = line.split(';')
@@ -18,6 +18,6 @@ print '</div>'
 
 print '<div id="browseLinks">'
 print '<a href="javascript:void(0)" onclick="moveLeft();">Move Left</a>'
-print '<a href="javascript:void(0)" onclick="moveLeft();">Add to Deals</a>'
-print '<a href="javascript:void(0)" onclick="moveLeft();">Move Right</a>'
+print '<a href="javascript:void(0)" onclick="addToDeals();">Add to Deals</a>'
+print '<a href="javascript:void(0)" onclick="moveRight();">Move Right</a>'
 print '</div>'
